@@ -1,0 +1,73 @@
+if game.StarterPlayer:FindFirstChildOfClass("Humanoid") and game.StarterPlayer:FindFirstChildOfClass("Humanoid").Health == 0 then
+local ScreenGuii = Instance.new("ScreenGui")
+local Framee = Instance.new("Frame")
+local TextLabell = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+ 
+ScreenGuii.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ 
+Framee.Parent = ScreenGuii
+Framee.BackgroundColor3 = Color3.new(1, 1, 1)
+Framee.Position = UDim2.new(0.388, 0, 0.30, 0)
+Framee.Size = UDim2.new(0.225, 0, 0.25, 0)
+Framee.Style = Enum.FrameStyle.RobloxRound
+ 
+TextLabell.Parent = Framee
+TextLabell.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabell.BackgroundTransparency = 1
+TextLabell.BorderSizePixel = 0
+TextLabell.Position = UDim2.new(0.0234702434, 0, 0.0343172848, 0)
+TextLabell.Size = UDim2.new(0, 310, 0, 100)
+TextLabell.Font = Enum.Font.SciFi
+TextLabell.Text = "Server  Was Anticlouded so All the functions might not work :/"
+TextLabell.TextColor3 = Color3.new(1, 0, 0.0156863)
+TextLabell.TextScaled = true
+TextLabell.TextSize = 14
+TextLabell.TextWrapped = true
+ 
+TextButton.Parent = Framee
+TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton.BorderColor3 = Color3.new(0.972549, 0.0784314, 1)
+TextButton.BorderSizePixel = 3
+TextButton.Position = UDim2.new(0.197191954, 0, 0.652173877, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Style = Enum.ButtonStyle.Custom
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Accept!"
+TextButton.TextColor3 = Color3.new(1, 1, 1)
+TextButton.BackgroundTransparency = 0.95
+TextButton.TextScaled = true
+TextButton.TextSize = 14
+TextButton.TextStrokeColor3 = Color3.new(0.423529, 0.972549, 0.270588)
+TextButton.TextStrokeTransparency = 12
+TextButton.TextWrapped = true
+ 
+spawn(function()
+    while true do
+        for i = 0, 1, 0.010 do
+           TextButton.TextColor3 = Color3.fromHSV(i, 1, 1)
+            wait()
+        end
+    end
+end)
+spawn(function()
+    while true do
+        for i = 0, 1, 0.010 do
+           TextLabell.TextColor3 = Color3.fromHSV(i, 1, 1)
+            wait()
+        end
+    end
+end)
+spawn(function()
+    while true do
+        for i = 0, 1, 0.010 do
+           TextButton.BorderColor3 = Color3.fromHSV(i, 1, 1)
+            wait()
+        end
+    end
+end)
+ 
+TextButton.MouseButton1Down:Connect(function()
+	game.Players.LocalPlayer.PlayerGui.ScreenGui:Destroy()
+end)
+end
